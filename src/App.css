@@ -16,6 +16,13 @@ body,
   overflow-x: hidden;
 }
 
+
+@media screen and (max-width: 768px) {
+  .paste-header{
+    flex-direction: column;
+  }
+}
+
 body {
   color: #e2e8f0;
   display: flex;
