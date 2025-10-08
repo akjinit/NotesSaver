@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: #111;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 0 8px rgba(255, 145, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a.active {
+  color: #ff9100;
+}
+
+.navbar a:hover {
+  color: #ffb84d;
+  transform: translateY(-2px);
+}

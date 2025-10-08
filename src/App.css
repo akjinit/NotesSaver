@@ -1,0 +1,356 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #0f1117;
+  /* consistent dark bg */
+  overflow-x: hidden;
+}
+
+body {
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #0f1117;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make all main containers take available vertical space */
+.home-container,
+.paste-container,
+.view-container {
+  flex: 1;
+  min-height: calc(100vh - 70px);
+  /* adjust for navbar height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 40px;
+}
+
+
+body {
+  background-color: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.paste-btn {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1d25;
+  padding: 16px 0;
+  border-bottom: 1px solid #2a2e3a;
+  gap: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #4f9cf9;
+}
+
+.active {
+  color: #4f9cf9;
+  font-weight: 600;
+}
+
+/* === Home Page === */
+.home-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-header {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.home-title-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #1e222b;
+  color: #e2e8f0;
+}
+
+.home-btn {
+  background-color: #4f9cf9;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.home-btn:hover {
+  background-color: #3b82f6;
+}
+
+.home-textarea {
+  background-color: #1e222b;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  resize: none;
+  height: 400px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* === Paste List Page === */
+.paste-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.paste-search {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #1e222b;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+.paste-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paste-card {
+  background-color: #1a1d25;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.paste-card:hover {
+  transform: translateY(-3px);
+}
+
+.paste-title {
+  font-size: 1.2rem;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.paste-content {
+  color: #cbd5e1;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.paste-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.paste-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.paste-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+/* Button Variants */
+.paste-btn.edit {
+  background-color: #4f9cf9;
+  color: #fff;
+}
+
+.paste-btn.edit:hover {
+  background-color: #3b82f6;
+}
+
+.paste-btn.view {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.paste-btn.view:hover {
+  background-color: #16a34a;
+}
+
+.paste-btn.delete {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.paste-btn.delete:hover {
+  background-color: #dc2626;
+}
+
+.paste-btn.copy {
+  background-color: #facc15;
+  color: #000;
+}
+
+.paste-btn.copy:hover {
+  background-color: #eab308;
+}
+
+.paste-btn.share {
+  background-color: #8b5cf6;
+  color: #fff;
+}
+
+.paste-btn.share:hover {
+  background-color: #7c3aed;
+}
+
+/* === View Paste Page === */
+.view-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.view-title {
+  background-color: #1e222b;
+  color: #f8fafc;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.view-content {
+  background-color: #1e222b;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  resize: none;
+  height: 400px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.view-copy-btn {
+  align-self: flex-start;
+  background-color: #4f9cf9;
+  color: white;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-copy-btn:hover {
+  background-color: #3b82f6;
+}
+
+/* === Not Found === */
+.not-found {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ef4444;
+  margin-top: 100px;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-textarea,
+  .view-content {
+    height: 300px;
+  }
+
+  .paste-card {
+    padding: 15px;
+  }
+
+  .paste-actions {
+    justify-content: center;
+  }
+}
